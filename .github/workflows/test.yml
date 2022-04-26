@@ -19,3 +19,11 @@ jobs:
       name: staging
     steps:
       - run: echo "🚀 deploy staging"
+  deploy-production:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: [deploy-staging]
+    environment:
+      name: production
+    steps:
+      - run: echo "🚀 deploy production"
