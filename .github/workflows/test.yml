@@ -5,10 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 we have a test job."
-  Deploy:
+  Deploy test:
     runs-on: ubuntu-latest
     needs: [Test]
     environment:
       name: test
     steps:
-      - run: echo "🎉 we have a deploy job."
+      - run: echo "🚀 deploy test"
+  Deploy staging:
+    runs-on: ubuntu-latest
+    needs: [Test]
+    environment:
+      name: staging
+    steps:
+      - run: echo "🚀 deploy staging"
