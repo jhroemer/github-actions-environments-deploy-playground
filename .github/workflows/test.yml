@@ -1,7 +1,11 @@
-name: GitHub Actions Demo
+name: Environments test
 on: [push]
 jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 we have a test job."
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 we have a deploy job."
